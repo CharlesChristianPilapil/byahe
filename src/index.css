@@ -54,12 +54,12 @@ dialog::backdrop {
 
 @keyframes dialog {
     from {
-        transform: translateY(-100%);
+        /* transform: translateY(-100%); */
         opacity: 0;
     }
 
     to {
-        transform: translateY(-50%);
+        /* transform: translateY(-50%); */
         opacity: 1;
     }
 }
