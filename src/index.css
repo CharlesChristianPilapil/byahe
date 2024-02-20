@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --dark: #323648;
+    --light: #707579;
+    --yellow: #da9d40;
+}
+
+
+.navigation {
+    animation: nav .5s ease-in-out;
+    z-index: -1;
+}
+
+.navlink.active {
+    color: var(--yellow);
+}
+
+.tab:hover .icon {
+    color: var(--dark);
+}
+
+.testimonial-tab:hover .icon, .testimonial-tab:hover h4 {
+    color: var(--dark);
+}
+
+.agent-tab .overlay {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.agent-tab:hover .overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.button {
+    transition: .2s ease-in-out;
+}
+
+dialog {
+  z-index: 21;  /* Adjust as needed */
+  animation: dialog .5s ease-in-out;
+}
+
+dialog::backdrop {
+  z-index: 20;  /* Should be lower than the modal's z-index */
+  background-color: rgba(0, 0, 0, 0.8);
+  display: grid;
+  place-items: center;
+}
+
+@keyframes dialog {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(-50%);
+        opacity: 1;
+    }
+}
+
+@keyframes nav {
+    from {
+        transform: translateY(10%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
