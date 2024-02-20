@@ -4,12 +4,12 @@ import Modal from './Modal';
 import Email from './Email';
 import { images } from '../constants';
 
-const image = images.email;
-
 export default function Newsletter() {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const modal = useRef();
+  const image = images.email;
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -32,7 +32,7 @@ export default function Newsletter() {
     <div>
       {submitted && (
         <Modal ref={modal} onClose={closeModal}>
-          <Email image={image} text='Subscription Sent to Email' />
+          <Email text='Subscription Sent to Email' />
         </Modal>
       )}
 

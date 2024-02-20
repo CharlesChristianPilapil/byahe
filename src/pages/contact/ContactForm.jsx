@@ -45,7 +45,7 @@ export default function ContactForm() {
     <>
       {submit && (
         <Modal ref={modal} onClose={closeModal}>
-          <Email image={modalData.image} text={modalData.description} />
+          <Email text={modalData.description} />
         </Modal>
       )}
 
