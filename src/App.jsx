@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Home from "./pages/home/Home";
@@ -12,6 +12,7 @@ import Newsletter from "./components/Newsletter";
 
 function App() {
   const location = useLocation();
+  const prevLocation = useRef(location);
 
   useEffect(() => {
     const handleScrollToTop = () => {
@@ -19,7 +20,12 @@ function App() {
     };
 
     // Scroll to top whenever the location changes
-    handleScrollToTop();
+    if (prevLocation.current.pathname !== location.pathname) {
+      handleScrollToTop();
+    }
+
+    // Update the previous location
+    prevLocation.current = location;
   }, [location]);
 
   return (
